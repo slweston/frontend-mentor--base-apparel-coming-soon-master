@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+:root {
+	--clr-desat-red: hsl(0, 36%, 70%);
+	--clr-shadow: hsla(0, 36%, 70%, 0.4);
+	--clr-button-hover: hsl(359, 75%, 89%);
+	--clr-text-input-border: hsl(348, 16%, 82%);
+	--clr-soft-red: hsl(0, 93%, 68%);
+	--clr-dark-grayish-red: hsl(0, 6%, 24%);
+	--img-linear-gradient-white-to-gray: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	--img-linear-gradient-light-to-dark-pink: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	--ff-body: 'Josefin Sans', sans-serif;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-semibold: 600;
+}
+
+$mediaMinWidth_desktop: 1440px;
+$footerMaxHeight: 2.5rem;
+
+body,
+input {
+	font-family: var(--ff-body);
+}
+
+main {
+	overflow: auto;
+
+	.container {
+		height: calc(100vh - $footerMaxHeight);
+		min-width: 375px;
+		max-width: 375px;
+		margin-inline: auto;
+		display: grid;
+		// align-items: center;
+
+		@media screen and (min-width: $mediaMinWidth_desktop) {
+			max-width: $mediaMinWidth_desktop;
+		}
+
+		.inner-container {
+			.main-grid {
+				display: grid;
+
+				@media screen and (min-width: $mediaMinWidth_desktop) {
+					background: url('../images/bg-pattern-desktop.svg');
+					background-repeat: no-repeat;
+				}
+
+				.logo {
+					margin: 1.9rem;
+
+					img {
+						width: 100px;
+					}
+
+					@media screen and (min-width: $mediaMinWidth_desktop) {
+						padding-left: 8.35rem;
+						padding-top: 2.2rem;
+
+						img {
+							width: 159px;
+						}
+					}
+
+				}
+
+				.hero-image-content {
+					.hero-image--desktop {
+						display: none;
+
+						@media screen and (min-width: $mediaMinWidth_desktop) {
+							display: unset;
+						}
+					}
+
+					.hero-image--mobile {
+						@media screen and (min-width: $mediaMinWidth_desktop) {
+							display: none;
+						}
+					}
+				}
+
+				.text-content {
+					text-align: center;
+					color: var(--clr-desat-red);
+					padding-inline: 2rem;
+
+					@media screen and (min-width: $mediaMinWidth_desktop) {
+						text-align: unset;
+						margin-inline: 8.2rem;
+						margin-top: 2.55rem;
+					}
+
+					h1 {
+						font-size: 2.5rem;
+						font-weight: var(--fw-light);
+						letter-spacing: 0.275em;
+						line-height: 1.08;
+						text-transform: uppercase;
+						margin-top: 4rem;
+
+						@media screen and (min-width: $mediaMinWidth_desktop) {
+							font-size: 3.95rem;
+							letter-spacing: 0.2838em;
+							margin-left: 0.1rem;
+						}
+
+						.coming-soon {
+							font-weight: var(--fw-semibold);
+							color: var(--clr-dark-grayish-red);
+						}
+					}
+
+					p {
+						font-size: 0.8799rem;
+						line-height: 1.55;
+						margin-top: 0.9rem;
+						margin-bottom: 2rem;
+
+						@media screen and (min-width: $mediaMinWidth_desktop) {
+							font-size: 1rem;
+							line-height: 1.8;
+							word-spacing: 0.02em;
+							margin: 1.2rem 3.1rem 2.7rem 0.1rem;
+						}
+					}
+
+					.email-input-group-with-validation {
+						position: relative;
+						width: 100%;
+
+						@media screen and (min-width: $mediaMinWidth_desktop) {
+							padding-right: 3.55rem;
+						}
+
+						.email-input-group {
+							position: relative;
+
+							.email-input,
+							.submit-button {
+								border-radius: 5rem;
+							}
+
+							.email-input {
+								font-size: 0.88rem;
+								border: 1px solid var(--clr-text-input-border);
+								color: var(--clr-dark-grayish-red);
+								width: 100%;
+								padding: 1rem 1.45rem;
+
+								&::placeholder {
+									color: var(--clr-desat-red);
+								}
+
+								@media screen and (min-width: $mediaMinWidth_desktop) {
+									font-size: 1rem;
+									padding: 1rem 1.88rem;
+								}
+							}
+
+							.email-error-image {
+								position: absolute;
+								inset-block: 0;
+								right: 4.5rem;
+								z-index: 999;
+								margin-block: auto;
+								display: none;
+
+								@media screen and (min-width: $mediaMinWidth_desktop) {
+									right: 7.3rem;
+								}
+							}
+
+							.submit-button {
+								border: none;
+								position: absolute;
+								inset-block: 0;
+								right: 0;
+								padding-inline: 1.6rem;
+								background-image: var(--img-linear-gradient-light-to-dark-pink);
+								box-shadow: 0 0.5rem 1rem var(--clr-shadow);
+
+								&:hover {
+									cursor: pointer;
+									background: var(--clr-button-hover);
+								}
+
+								@media screen and (min-width: $mediaMinWidth_desktop) {
+									padding-inline: 2.75rem;
+								}
+							}
+						}
+
+						.email-error-message {
+							font-size: 0.8rem;
+							position: absolute;
+							inset-inline: 0;
+							text-align: initial;
+							padding: 0.6rem 2rem;
+							color: var(--clr-soft-red);
+							display: none;
+
+							@media screen and (min-width: $mediaMinWidth_desktop) {
+								font-weight: var(--fw-semibold);
+							}
+						}
+					}
+
+					.email-input-group-with-validation.error {
+						.email-input {
+							border-width: 2px;
+							border-color: var(--clr-soft-red);
+						}
+
+						.email-error-image,
+						.email-error-message {
+							display: unset;
+						}
+					}
+				}
+
+				@media screen and (min-width: $mediaMinWidth_desktop) {
+					grid-template-columns: 830px auto;
+					grid-template-rows: auto 1fr;
+					grid-template-areas:
+						'logo hero'
+						'text hero'
+					;
+
+					.logo {
+						grid-area: logo;
+					}
+
+					.hero-image-content {
+						grid-area: hero;
+					}
+
+					.text-content {
+						grid-area: text;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+footer {
+	font-size: 0.8rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0.25rem;
+	text-align: center;
+	height: $footerMaxHeight;
+	display: grid;
+	place-content: center;
+	background: #fff;
+
+	a {
+		color: blue;
+	}
+}

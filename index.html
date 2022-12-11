@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+	<title>Frontend Mentor | Base Apparel coming soon page</title>
+	<link rel="stylesheet" href="src/css/main.min.css">
+	<script defer src="src/js/main.js"></script>
+</head>
+<body>
+
+	<main>
+		<div class="container">
+			<div class="inner-container">
+				<div class="main-grid">
+					<div class="logo"><img src="src/images/logo.svg" alt="logo" aria-hidden="true"></div>
+					<div class="hero-image-content">
+						<img class="hero-image--mobile" src="src/images/hero-mobile.jpg" alt="mobile hero image"
+							aria-hidden="true">
+						<img class="hero-image--desktop" src="src/images/hero-desktop.jpg" alt="desktop hero image"
+							aria-hidden="true">
+					</div>
+					<div class="text-content">
+						<h1>We're <span class="coming-soon">coming soon</span></h1>
+						<p>
+							Hello fellow shoppers! We're currently building our new fashion store.
+							Add your email below to stay up-to-date with announcements and our launch deals.
+						</p>
+						<form novalidate>
+							<div class="email-input-group-with-validation">
+								<div class="email-input-group">
+									<input class="email-input" type="email" name="email" placeholder="Email Address"
+										required></input>
+									<img class="email-error-image" src="src/images/icon-error.svg" alt="error"
+										aria-hidden="true">
+									<button class="submit-button" type="submit" aria-label="submit"><img
+											src="src/images/icon-arrow.svg" alt="arrow"></button>
+								</div>
+								<span class="email-error-message" aria-live="polite">Please provide a valid email</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<span>
+			Challenge by <a
+				href="https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0"
+				target="_blank">Frontend Mentor</a>.
+			Coded by <a href="https://github.com/slweston" target="_blank">Scott Weston</a>.
+		</span>
+	</footer>
+</body>
+</html>
